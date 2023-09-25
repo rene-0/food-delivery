@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="239.90778"
+   height="33.119999"
+   version="1.1"
+   id="svg8"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs12" />
+  <!-- Transparent Background -->
+  <!-- Text: "Food" in white font -->
+  <text
+     x="-2.0880313"
+     y="16.200001"
+     fill="black"
+     font-family="Roboto, sans-serif"
+     font-size="36"
+     dominant-baseline="middle"
+     font-weight="bold"
+     id="text4"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:36px;font-family:Rubik;-inkscape-font-specification:'Rubik, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#000000">Food</text>
+  <!-- Text: "Delivery" in gold font -->
+  <text
+     x="88.815804"
+     y="16.92"
+     fill="#FFD700"
+     font-family="Roboto, sans-serif"
+     font-size="36"
+     dominant-baseline="middle"
+     font-weight="bold"
+     id="text6"
+     style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:36px;font-family:Rubik;-inkscape-font-specification:'Rubik, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffd700">Delivery</text>
+</svg>

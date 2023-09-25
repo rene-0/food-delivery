@@ -1,0 +1,3 @@
+#popular-products-container::-webkit-scrollbar {
+  display: none;
+}
