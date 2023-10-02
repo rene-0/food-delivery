@@ -1,4 +1,5 @@
 import { Button } from "@/app/components/button/Button"
+import { Input } from "@/app/components/input/Input"
 import { SocialLinks } from "@/app/components/social-links/SocialLinks"
 import { Title } from "@/app/components/title/Title"
 import { RadioBox } from "./components/radio-box/RadioBox"
@@ -21,28 +22,16 @@ export function ContactForm() {
       </div>
       <div className="mb-5">
         <div className="flex flex-col mb-5">
-          <span className="text-3xl font-bold">Nome completo:</span>
-          <input
-            placeholder="Renê Nunes Colombaro"
-            className="p-2 rounded-md min-w-0 mr-2 outline-none bg-primary-50 border-2 border-accent-950 font-semibold"
-            type="text"
-          />
+          <span className="text-3xl font-bold mb-1">Nome completo:</span>
+          <Input placeholder="Renê Nunes Colombaro" type="text" />
         </div>
         <div className="flex flex-col mb-5">
-          <span className="text-3xl font-bold">E-mail:</span>
-          <input
-            placeholder="rene.colombaro@hotmail.com"
-            className="p-2 rounded-md min-w-0 mr-2 outline-none bg-primary-50 border-2 border-accent-950 font-semibold"
-            type="text"
-          />
+          <span className="text-3xl font-bold mb-1">E-mail:</span>
+          <Input placeholder="rene.colombaro@hotmail.com" type="text" />
         </div>
         <div className="flex flex-col mb-5">
-          <span className="text-3xl font-bold">Telefone:</span>
-          <input
-            placeholder="+55 14 981401696"
-            className="p-2 rounded-md min-w-0 mr-2 outline-none bg-primary-50 border-2 border-accent-950 font-semibold"
-            type="text"
-          />
+          <span className="text-3xl font-bold mb-1">Telefone:</span>
+          <Input placeholder="+55 14 981401696" type="text" />
         </div>
       </div>
       <div className="flex flex-wrap mb-5">
