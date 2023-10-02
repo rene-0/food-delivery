@@ -17,6 +17,9 @@ const font = Rubik({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-br">
+      <head>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+      </head>
       <body className={`${font.className} bg-primary-200`}>
         <Nav />
         <main>{children}</main>

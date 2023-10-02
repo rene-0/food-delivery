@@ -1,16 +1,7 @@
-import {
-  EnvironmentFilled,
-  FacebookFilled,
-  InstagramFilled,
-  LinkedinFilled,
-  MailFilled,
-  PhoneFilled,
-  TwitterCircleFilled,
-  WhatsAppOutlined,
-  YoutubeFilled,
-} from "@ant-design/icons"
+import { EnvironmentFilled, MailFilled, PhoneFilled } from "@ant-design/icons"
 import Image from "next/image"
 import Link from "next/link"
+import { SocialLinks } from "../social-links/SocialLinks"
 import { Title } from "../title/Title"
 import { LabelIcon } from "./components/LabelIcon"
 
@@ -21,13 +12,8 @@ export function Footer() {
         <Link href="">
           <Image src="/logo_inverted.svg" alt="logo" width={250} height={150} />
         </Link>
-        <div className="flex">
-          <LinkedinFilled className="text-3xl pr-3" />
-          <FacebookFilled className="text-3xl pr-3" />
-          <WhatsAppOutlined className="text-3xl pr-3" />
-          <InstagramFilled className="text-3xl pr-3" />
-          <TwitterCircleFilled className="text-3xl pr-3" />
-          <YoutubeFilled className="text-3xl pr-3" />
+        <div>
+          <SocialLinks />
         </div>
       </div>
       <div className="col-span-1">

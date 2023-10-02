@@ -1,0 +1,18 @@
+.radio-box input[type="radio"] {
+  opacity: 0;
+  display: none;
+}
+
+.radio-box input:checked + div::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: currentColor;
+  display: block;
+  border-radius: 100%;
+}
+
+.radio-box .marker {
+  width: 25px;
+  height: 25px;
+}
