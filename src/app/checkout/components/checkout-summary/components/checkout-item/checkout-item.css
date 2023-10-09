@@ -1,0 +1,14 @@
+/* .checkout-item[data-selected="true"] .accordion {
+  height: 100%;
+} */
+
+.accordion {
+  height: auto;
+  max-height: 9999px;
+  transition: max-height 0.3s cubic-bezier(1, 0, 1, 0);
+}
+
+.accordion.close {
+  max-height: 0;
+  transition: max-height 0.3s cubic-bezier(0, 1, 0, 1);
+}

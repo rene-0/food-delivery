@@ -39,7 +39,7 @@ export function HeroSection() {
       <div className="w-5/12 relative flex flex-col justify-center items-center">
         <Image className="w-full" src="/burger.png" alt="burger" width={550} height={550} />
         <div className="bottom-0 text-center">
-          <Title level={2} className="font-black text-accent-900/95">
+          <Title level={2} className="font-black mb-0 text-accent-900/95">
             X-Burger
           </Title>
           <Title level={2} className="font-black text-secondary-950/75">

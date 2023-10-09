@@ -37,9 +37,11 @@ export default function Nav() {
           </Link>
         </div>
         <div className="flex items-center">
-          <Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
-            <ShoppingOutlined />
-          </Button>
+          <Link href="./checkout">
+            <Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
+              <ShoppingOutlined />
+            </Button>
+          </Link>
           <div>
             <Link className="text-lg text-white font-semibold mr-0 py-2 px-8 rounded-full cursor-pointer bg-accent-950  drop-shadow-md" href="/login">
               Entrar

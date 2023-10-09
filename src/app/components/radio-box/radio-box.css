@@ -1,0 +1,32 @@
+.radio-box[aria-disabled="true"] {
+  filter: grayscale(1);
+  cursor: no-drop;
+}
+
+.radio-box label {
+  cursor: inherit;
+}
+
+.radio-box input[type="radio"] {
+  opacity: 0;
+  display: none;
+}
+
+.radio-box input + div.marker::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: transparent;
+  display: block;
+  border-radius: 100%;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.radio-box input:checked + div::after {
+  background-color: currentColor;
+}
+
+.radio-box .marker {
+  width: 25px;
+  height: 25px;
+}
