@@ -2,7 +2,7 @@ import { ComponentProps, ReactNode, createElement } from "react"
 import { twMerge } from "tailwind-merge"
 
 type TitleProps = ComponentProps<"h1"> & {
-  level: number
+  level: 1 | 2 | 3 | 4 | 5
   children: ReactNode
 }
 
