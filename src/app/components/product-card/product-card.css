@@ -1,0 +1,15 @@
+.product-card {
+  width: 180px;
+}
+
+@media (min-width: 768px) {
+  .product-card {
+    width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-card {
+    width: 250px;
+  }
+}
