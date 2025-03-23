@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  front:
+    build: .
+    container_name: food-delivery-front
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/usr/app
+    command: npm run dev
+    restart: always
+    environment:
+      - NODE_ENV=development
+      - WATCHPACK_POLLING=true
