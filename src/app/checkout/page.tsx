@@ -7,7 +7,7 @@ import { StepsIndicator } from "./components/checkout-summary/components/steps-i
 import { DeliveryInfo } from "./components/delivery-info/DeliveryInfo"
 
 export default function Checkout() {
-  const [currentStep, setCurrentStep] = useState(1)
+  const [currentStep, setCurrentStep] = useState(3)
 
   const incrementStep = () => {
     if (currentStep >= 3) {
@@ -24,8 +24,7 @@ export default function Checkout() {
   }
 
   return (
-    <div className="px-20 pb-10 text-secondary-950/75 checkout">
-      {/* Criar um indicador de etapas. 1: Resumo/Configurador de lanche, 2: Informação de entrega, condição de pagamento, 3: Resumo */}
+    <div className="px-0 lg:px-10 2xl:px-20 pb-5 text-secondary-950/75 checkout">
       <StepsIndicator currentStep={currentStep} />
       <div className="overflow-x-hidden flex flex-nowrap p-1">
         <CheckoutSummary incrementStep={incrementStep} active={currentStep === 1} />

@@ -16,7 +16,7 @@ export function DeliveryMode({ selectedMode, onSelect }: DeliveryModeProps) {
         Modo de entrega:
       </Title>
       <div className="grid grid-cols-12 pr-2">
-        <div className="col-span-6">
+        <div className="col-span-12 lg:col-span-6 mb-2 lg:mb-0">
           <RadioBox onChange={() => onSelect("delivery")} defaultChecked value="delivery" id="delivery" name="receiving_type">
             Entregar no endereço
           </RadioBox>
@@ -41,7 +41,7 @@ export function DeliveryMode({ selectedMode, onSelect }: DeliveryModeProps) {
             </div>
           </div>
         </div>
-        <div className="col-span-6 pl-2">
+        <div className="col-span-12 lg:col-span-6 lg:pl-2">
           <RadioBox id="get" onChange={() => onSelect("get")} value="get" name="receiving_type">
             Retirar no estabelecimento
           </RadioBox>

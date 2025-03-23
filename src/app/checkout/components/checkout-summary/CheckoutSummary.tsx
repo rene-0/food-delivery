@@ -10,11 +10,11 @@ export type CheckoutSummaryProps = {
 
 export function CheckoutSummary({ active, incrementStep }: CheckoutSummaryProps) {
   return (
-    <div className={`${active ? "w-full" : "w-0 h-0"} flex-shrink-0 overflow-hidden`}>
+    <div className={`${active ? "w-full" : "w-0 h-0"} transition-all flex-shrink-0 overflow-hidden`}>
       <div className="grid grid-cols-2 p-2">
-        <div className="p-20 pt-10 relative flex flex-col justify-center items-center">
+        <div className="col-span-2 lg:col-span-1 2xl:p-20 pt-10 relative flex flex-col justify-center items-center">
           {/* Imagem deve mudar conforme o CheckoutItem selecionado */}
-          <Image className="w-full h-auto mb-5" width={1000} height={1000} src="/burger.png" alt="" />
+          <Image className="w-1/2 lg:w-full h-auto mb-5" width={1000} height={1000} src="/burger.png" alt="" />
           <Title level={2} className="font-black mb-0 text-center text-accent-900/95">
             X-Burger
           </Title>
@@ -22,7 +22,7 @@ export function CheckoutSummary({ active, incrementStep }: CheckoutSummaryProps)
             18,36 R$
           </Title>
         </div>
-        <div className="py-5 px-10 flex flex-col justify-between bg-primary-100 shadow">
+        <div className="col-span-2 lg:col-span-1 py-5 px-2 md:px-5 2xl:px-10 flex flex-col justify-between bg-primary-100 shadow">
           <div className="mb-10">
             <Title className="text-5xl mb-2" level={5}>
               Resumo:
@@ -39,7 +39,7 @@ export function CheckoutSummary({ active, incrementStep }: CheckoutSummaryProps)
               <CheckoutItem id="9" />
             </div>
           </div>
-          <div className="flex items-end justify-between mb-2">
+          <div className="flex items-end justify-between">
             <div className="text-4xl font-black text-accent-950">98,37 R$</div>
             <div>
               <Button onClick={incrementStep}>Continuar</Button>

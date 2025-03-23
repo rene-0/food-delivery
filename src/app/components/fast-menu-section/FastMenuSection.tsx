@@ -9,7 +9,7 @@ export function FastMenuSection() {
       <Title level={3} className="text-center">
         Cardápio Rápido
       </Title>
-      <div className="flex items-center justify-center mb-5">
+      <div className="flex justify-center flex-wrap mb-5">
         <CategoryItem>Lacnhes</CategoryItem>
         <CategoryItem>Salgados</CategoryItem>
         <CategoryItem>Saladas</CategoryItem>
@@ -21,25 +21,25 @@ export function FastMenuSection() {
         <CategoryItem>Bebidas</CategoryItem>
         <CategoryItem>Doces</CategoryItem>
       </div>
-      <div className="flex justify-center flex-wrap px-20">
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
-        <ProductCard className="mr-5 my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+      <div className="flex justify-center flex-wrap lg:px-20">
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
+        <ProductCard className="mr-2 my-2 lg:mr-5 lg:my-5" imageUrl="/burger.png" price={18.36} productName="X-Burger" starsPercentageRating={55} />
       </div>
       <div className="p-5 flex justify-center items-center">
         <Button>Ver mais</Button>

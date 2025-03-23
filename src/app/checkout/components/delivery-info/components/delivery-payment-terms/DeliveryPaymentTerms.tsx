@@ -18,11 +18,11 @@ export function DeliveryPaymentTerms({ deliveryMode }: DeliveryPaymentTermsProps
         Condição de pagamento:
       </Title>
       <div className="grid grid-cols-12">
-        <div className="col-span-6 pr-2">
+        <div className="col-span-12 lg:col-span-6 lg:pr-2">
           <PayWithCreditCard isSelected={deliveryPaymentTermsMode === "credit_card"} onSelect={() => setDeliveryPaymentTermsMode("credit_card")} />
           <PayWithPix onSelect={() => setDeliveryPaymentTermsMode("pix")} />
         </div>
-        <div className="col-span-6 pl-2">
+        <div className="col-span-12 lg:col-span-6 lg:pl-2 mb-5">
           <PayOnDelivery
             deliveryMode={deliveryMode}
             onSelect={() => setDeliveryPaymentTermsMode("on_delivery")}

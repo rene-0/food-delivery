@@ -4,8 +4,8 @@ import { StatisticsCard } from "./components/Statistcs"
 
 export default function About() {
   return (
-    <div className="flex flex-col justify-center items-center mt-5">
-      <div className="mb-5 rounded p-10 w-7/12">
+    <div className="flex flex-col p-10 justify-center items-center mt-5">
+      <div className="mb-5 rounded w-12/12 lg:w-7/12">
         <div className="mb-20">
           <Title className="mb-5" level={1}>
             Some big title here!
@@ -28,7 +28,7 @@ export default function About() {
           <Title className="mb-5" level={2}>
             Nossas conquistas
           </Title>
-          <div className="flex">
+          <div className="flex flex-wrap">
             <StatisticsCard icon={HeartFilled} title="Lanches vendidos">
               mais de <b className="text-accent-950">12mil</b> lanches
             </StatisticsCard>
@@ -43,7 +43,7 @@ export default function About() {
             </StatisticsCard>
           </div>
         </div>
-        <div className="mb-20">
+        <div>
           <Title className="mb-5" level={2}>
             Galeria
           </Title>

@@ -23,7 +23,7 @@ export function FilterSection() {
   }
 
   return (
-    <div className="col-span-2 bg-primary-200 flex flex-col shrink-0 p-5 shadow-lg rounded">
+    <div className="w-full bg-primary-200 flex flex-col p-5 shadow-lg rounded">
       <Title className="text-4xl" level={2}>
         Filtros
       </Title>
@@ -39,7 +39,7 @@ export function FilterSection() {
           Pesquise por nome:
         </Title>
         <div className="flex">
-          <input className="px-2 rounded-md min-w-0 mr-2 outline-none bg-primary-50 border-2 border-accent-950" type="text" />
+          <input className="w-full px-2 rounded-md min-w-0 mr-2 outline-none bg-primary-50 border-2 border-accent-950" type="text" />
           <Button className="w-10 shrink-0 h-10 p-0">
             <SearchOutlined />
           </Button>
@@ -55,7 +55,7 @@ export function FilterSection() {
         <Title className="text-3xl" level={5}>
           Selecione categorias:
         </Title>
-        <div className="flex flex-col mb-5">
+        <div className="flex lg:flex-col flex-wrap mb-5">
           {filtersMock.map((filter) => (
             <FilterCheckbox
               key={filter}
