@@ -1,6 +1,45 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-primary-50: #fffcf7;
+  --color-primary-100: #fffbf5;
+  --color-primary-200: #fff9f0;
+  --color-primary-300: #fff7ec;
+  --color-primary-400: #fff6e9;
+  --color-primary-500: #fff4e5;
+  --color-primary-600: #fff2e1;
+  --color-primary-700: #fff1de;
+  --color-primary-800: #ffefda;
+  --color-primary-900: #ffedd6;
+  --color-primary-950: #ffebd3;
+
+  /* Secondary */
+  --color-secondary-50: #26304a;
+  --color-secondary-100: #232c44;
+  --color-secondary-200: #20283e;
+  --color-secondary-300: #1d2438;
+  --color-secondary-400: #1a2032;
+  --color-secondary-500: #171c2c;
+  --color-secondary-600: #141826;
+  --color-secondary-700: #111420;
+  --color-secondary-800: #0e101a;
+  --color-secondary-900: #0b0d14;
+  --color-secondary-950: #08090e;
+
+  /* Accent */
+  --color-accent-50: #fdf3f2;
+  --color-accent-100: #fce0e4;
+  --color-accent-200: #fbddd5;
+  --color-accent-300: #fadacd;
+  --color-accent-400: #f8d6bf;
+  --color-accent-500: #f7d3b1;
+  --color-accent-600: #f6d0a3;
+  --color-accent-700: #f4cc8b;
+  --color-accent-800: #f3c97d;
+  --color-accent-900: #f1bf65;
+  --color-accent-950: #f0bc57;
+}
 
 html,
 body {
