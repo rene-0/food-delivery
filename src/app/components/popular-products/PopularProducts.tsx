@@ -63,7 +63,7 @@ export function PopularProducts() {
         Produtos populares
       </Title>
       <div className="relative">
-        <div className="hidden absolute left-0 top-0 z-50 h-full w-40 sm:flex items-center justify-center bg-gradient-to-r from-primary-200 from-30% via-primary-200/70 via-70% to-transparent to-100%">
+        <div className="hidden absolute left-0 top-0 z-30 h-full w-40 sm:flex items-center justify-center bg-gradient-to-r from-primary-200 from-30% via-primary-200/70 via-70% to-transparent to-100%">
           <Button className="mr-0 p-2 rounded-full bg-accent-950">
             <ArrowLeftOutlined />
           </Button>
@@ -140,7 +140,7 @@ export function PopularProducts() {
             starsPercentageRating={50}
           />
         </div>
-        <div className="hidden absolute right-0 top-0 z-50 h-full w-40 sm:flex items-center justify-center bg-gradient-to-l from-primary-200 from-30% via-primary-200/70 via-70% to-transparent to-100%">
+        <div className="hidden absolute right-0 top-0 z-30 h-full w-40 sm:flex items-center justify-center bg-gradient-to-l from-primary-200 from-30% via-primary-200/70 via-70% to-transparent to-100%">
           <Button className="mr-0 p-2 rounded-full bg-accent-950">
             <ArrowRightOutlined />
           </Button>

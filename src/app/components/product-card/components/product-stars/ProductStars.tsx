@@ -15,7 +15,7 @@ export function ProductStars({ starsPercentageRating }: ProductStarsProps) {
         <StarFilled className="text-accent-950/40 text-xl" />
         <StarFilled className="text-accent-950/40 text-xl" />
       </div>
-      <div style={{ width: `${starsPercentageRating}%` }} className="flex overflow-hidden  absolute  z-20">
+      <div style={{ width: `${starsPercentageRating}%` }} className="flex overflow-hidden absolute z-20">
         <StarFilled className="text-accent-950 text-xl" />
         <StarFilled className="text-accent-950 text-xl" />
         <StarFilled className="text-accent-950 text-xl" />
