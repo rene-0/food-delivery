@@ -11,7 +11,7 @@ type FilterCheckboxProps = {
 
 export function FilterCheckbox({ children, marked, onClick }: FilterCheckboxProps) {
   return (
-    <Button onClick={onClick} className="flex items-center px-2 mb-2">
+    <Button onClick={onClick} className="flex items-center px-5 mb-2 mr-2">
       <div data-marked={marked} className="mr-1 bg-white rounded checkmark text-accent-950"></div>
       {children}
     </Button>

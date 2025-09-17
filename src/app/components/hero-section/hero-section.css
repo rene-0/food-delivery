@@ -1,0 +1,9 @@
+.home .establishment-info {
+  max-width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .home .establishment-info {
+    max-width: 600px;
+  }
+}

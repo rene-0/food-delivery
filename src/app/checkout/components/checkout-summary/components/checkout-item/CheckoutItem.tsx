@@ -13,7 +13,7 @@ export function CheckoutItem({ id }: CheckoutItemProps) {
   return (
     <div
       onClick={() => setIsSelected((old) => !old)}
-      className="checkout-item p-2 mb-3 hover:bg-primary-50 hover:shadow transition ease-in-out duration-300 cursor-pointer"
+      className="checkout-item p-2 mb-3 last:mb-1 hover:bg-primary-50 hover:shadow transition ease-in-out duration-300 cursor-pointer"
     >
       <div className="flex justify-between">
         <span className="text-3xl text-accent-950 font-black">X-Burger</span>

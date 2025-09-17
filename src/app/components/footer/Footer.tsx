@@ -7,8 +7,8 @@ import { LabelIcon } from "./components/LabelIcon"
 
 export function Footer() {
   return (
-    <footer className="bg-secondary-800 text-cyan-50 px-10 py-5 grid grid-cols-3 grid-rows-1">
-      <div className="col-span-1">
+    <footer className="bg-secondary-800 text-cyan-50 px-10 py-5 flex justify-between flex-wrap">
+      <div>
         <Link href="">
           <Image src="/logo_inverted.svg" alt="logo" width={250} height={150} />
         </Link>
@@ -16,7 +16,7 @@ export function Footer() {
           <SocialLinks />
         </div>
       </div>
-      <div className="col-span-1">
+      <div>
         <Title level={5} className="text-4xl text-primary-50 mb-1">
           Contato
         </Title>
@@ -24,7 +24,7 @@ export function Footer() {
         <LabelIcon icon={PhoneFilled} labelText="+00 00 00000-0000" />
         <LabelIcon icon={MailFilled} labelText="email@email.com" />
       </div>
-      <div className="col-span-1">
+      <div>
         <Title level={5} className="text-4xl text-primary-50 mb-1">
           Sobre
         </Title>

@@ -5,7 +5,7 @@ import { PopularProducts } from "./components/popular-products/PopularProducts"
 
 export default function Home() {
   return (
-    <div className="min-h-full">
+    <div className="home min-h-full">
       <HeroSection />
       <PopularProducts />
       <FastMenuSection />
