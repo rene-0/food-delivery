@@ -1,7 +1,6 @@
-import { Button } from "@/app/components/button/Button"
-import { ShoppingOutlined } from "@ant-design/icons"
 import Image from "next/image"
 import Link from "next/link"
+import { NavButtons } from "../nav-buttons/NavButtons"
 
 export function DesktopNav() {
   return (
@@ -36,18 +35,7 @@ export function DesktopNav() {
             Contato
           </Link>
         </div>
-        <div className="flex items-center">
-          <Link href="./checkout">
-            <Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
-              <ShoppingOutlined />
-            </Button>
-          </Link>
-          <div>
-            <Link className="text-lg text-white font-semibold mr-0 py-2 px-8 rounded-full cursor-pointer bg-accent-950  drop-shadow-md" href="/login">
-              Entrar
-            </Link>
-          </div>
-        </div>
+        <NavButtons />
       </div>
     </div>
   )

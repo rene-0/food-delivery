@@ -72,70 +72,70 @@ export function PopularProducts() {
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />
           <ProductCard
             className="mr-5 first:ml-36 last:mr-36 my-5"
             price={18.36}
-            productName="X-Burger"
+            name="X-Burger"
             imageUrl="/burger.png"
             starsPercentageRating={50}
           />

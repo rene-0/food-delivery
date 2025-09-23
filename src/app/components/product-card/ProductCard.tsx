@@ -8,18 +8,18 @@ import "./product-card.css"
 
 type ProductCardProps = ComponentProps<"div"> & {
   price: number
-  productName: string
+  name: string
   imageUrl: string
   starsPercentageRating: number
 }
 
-export function ProductCard({ productName, price, starsPercentageRating, imageUrl, ...rest }: ProductCardProps) {
+export function ProductCard({ name, price, starsPercentageRating, imageUrl, ...rest }: ProductCardProps) {
   return (
     <div
-      className={twMerge("product-card text-xl lg:text-3xl flex flex-col items-center shrink-0 p-5 bg-primary-200 shadow-lg rounded", rest.className)}
+      className={twMerge("product-card text-xl lg:text-3xl flex flex-col items-center shrink-0 p-5 bg-primary-200 shadow-lg rounded max-w-64", rest.className)}
     >
       <Image src={imageUrl} alt="burger" width={300} height={300} />
-      <p className="font-black text-accent-950">{productName}</p>
+      <p title={name} className="font-black text-accent-950 truncate w-full">{name}</p>
       <ProductStars starsPercentageRating={starsPercentageRating} />
       <p className="font-black text-secondary-950/50">{price} R$</p>
       <div className="flex items-center mt-2">
