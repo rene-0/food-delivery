@@ -32,6 +32,7 @@ type AuthContextType = {
 	login: (email: string, password: string) => Promise<void>
 	logout: () => void
 	setUser: Dispatch<SetStateAction<User | undefined>>
+	decodeToken: (token: string) => any
 	isAuthenticated: boolean
 } & User
 
@@ -39,6 +40,7 @@ export const AuthContext = createContext<AuthContextType>({
 	login: async () => { },
 	logout: () => { },
 	setUser: (user) => { },
+	decodeToken: (token) => { },
 	isAuthenticated: false
 })
 
@@ -78,6 +80,21 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 		setUser(undefined)
 	}
 
+	const decodeToken = (token: string) => {
+		try {
+			const decoded = jwtDecode<Token>(token)
+			setUser({
+				name: decoded?.name,
+				email: decoded?.email,
+				accessToken: token,
+				phoneNumber: decoded?.phoneNumber
+			})
+			localStorage.setItem('accessToken', token || '')
+		} catch (error) {
+			localStorage.removeItem("accessToken")
+		}
+	}
+
 	useEffect(() => {
 		AxiosHttpHelper.registerInterceptors(setUser)
 	}, [])
@@ -88,20 +105,10 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 			localStorage.removeItem("accessToken")
 			return
 		}
-		try {
-			const decoded = jwtDecode<Token>(token)
-			setUser({
-				name: decoded?.name,
-				email: decoded?.email,
-				accessToken: token,
-				phoneNumber: decoded?.phoneNumber
-			})
-		} catch (error) {
-			localStorage.removeItem("accessToken")
-		}
+		decodeToken(token)
 	}, [])
 
 	return (
-		<AuthContext.Provider value={{ ...user, isAuthenticated: !!user?.accessToken, setUser, login, logout }}>{children}</AuthContext.Provider>
+		<AuthContext.Provider value={{ ...user, isAuthenticated: !!user?.accessToken, setUser, login, logout, decodeToken }}>{children}</AuthContext.Provider>
 	)
 }

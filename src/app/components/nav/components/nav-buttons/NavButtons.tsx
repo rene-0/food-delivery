@@ -11,15 +11,15 @@ export function NavButtons() {
 
 	return (
 		<div className="flex items-center mt-auto mb-0">
-			<Link href="./checkout">
-				<Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
+			<Link className=" mr-10" href="./checkout">
+				<Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950">
 					<ShoppingOutlined />
 				</Button>
 			</Link>
 			<div>
 				{isAuthenticated ? (
 					<Link href="./conta">
-						<Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
+						<Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950">
 							<UserOutlined />
 						</Button>
 					</Link>
