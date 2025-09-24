@@ -2,7 +2,7 @@
 import { AxiosHttpHelper } from "@/helpers/axios-http-helper"
 import { jwtDecode } from "jwt-decode"
 import { useRouter } from "next/navigation"
-import { createContext, useEffect, useState } from "react"
+import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react"
 import { toast } from "react-toastify"
 
 type User = {
@@ -31,12 +31,14 @@ type Token = {
 type AuthContextType = {
 	login: (email: string, password: string) => Promise<void>
 	logout: () => void
+	setUser: Dispatch<SetStateAction<User | undefined>>
 	isAuthenticated: boolean
 } & User
 
 export const AuthContext = createContext<AuthContextType>({
 	login: async () => { },
 	logout: () => { },
+	setUser: (user) => { },
 	isAuthenticated: false
 })
 
@@ -77,47 +79,13 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 	}
 
 	useEffect(() => {
-		AxiosHttpHelper.api.interceptors.response.use(
-			(response) => response,
-			async (error) => {
-				const originalRequest = error.config
-
-				if (error.response?.status === 401 && !originalRequest._retry) {
-					try {
-						originalRequest._retry = true
-						const { data } = await AxiosHttpHelper.api.post("/refresh-token")
-						const newToken = data.accessToken.token
-
-						localStorage.setItem("accessToken", newToken)
-
-						console.log('AxiosHttpHelper.api', AxiosHttpHelper.api)
-						console.log('originalRequest', originalRequest)
-
-						return AxiosHttpHelper.api(originalRequest)
-					} catch (err) {
-						localStorage.removeItem("accessToken")
-						setUser(undefined)
-						return Promise.reject(err)
-					}
-				}
-
-
-				return Promise.reject(error)
-			}
-		)
-
-		AxiosHttpHelper.api.interceptors.request.use((config) => {
-			const token = localStorage.getItem("accessToken")
-			if (token) {
-				config.headers.Authorization = `Bearer ${token}`
-			}
-			return config
-		})
+		AxiosHttpHelper.registerInterceptors(setUser)
 	}, [])
 
 	useEffect(() => {
 		const token = localStorage.getItem("accessToken")
 		if (!token) {
+			localStorage.removeItem("accessToken")
 			return
 		}
 		try {
@@ -134,6 +102,6 @@ export default function AuthProvider({ children }: AuthProviderProps) {
 	}, [])
 
 	return (
-		<AuthContext.Provider value={{ ...user, isAuthenticated: !!user?.accessToken, login, logout }}>{children}</AuthContext.Provider>
+		<AuthContext.Provider value={{ ...user, isAuthenticated: !!user?.accessToken, setUser, login, logout }}>{children}</AuthContext.Provider>
 	)
 }
