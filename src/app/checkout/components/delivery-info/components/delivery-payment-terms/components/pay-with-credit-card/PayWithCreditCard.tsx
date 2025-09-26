@@ -9,33 +9,33 @@ type PayWithCreditCardProps = {
 export function PayWithCreditCard({ onSelect, isSelected }: PayWithCreditCardProps) {
   return (
     <div className="mb-3">
-      <RadioBox onChange={onSelect} defaultChecked value="credit_card" id="credit_card" name="payment_type">
+      <RadioBox onChange={onSelect} checked={isSelected} value="credit_card" id="credit_card" name="payment_type">
         Pagar online no cartão
       </RadioBox>
-      <div className={`grid grid-cols-12 ${isSelected ? "opacity-1" : "opacity-40 grayscale"} transition-all`}>
+      <div className={`grid gap-1 grid-cols-12 ${isSelected ? "" : "opacity-40 grayscale"} transition-all`}>
         <div className="flex flex-col col-span-12">
-          <label className="text-2xl font-bold" htmlFor="">
+          <label className="text-2xl font-bold">
             Número do cartão:
           </label>
-          <Input />
+          <Input disabled={!isSelected} />
         </div>
         <div className="flex flex-col col-span-12">
-          <label className="text-2xl font-bold" htmlFor="">
+          <label className="text-2xl font-bold">
             Nome do titular:
           </label>
-          <Input />
+          <Input disabled={!isSelected} />
         </div>
         <div className="flex flex-col col-span-6">
-          <label className="text-2xl font-bold" htmlFor="">
+          <label className="text-2xl font-bold">
             Validade:
           </label>
-          <Input />
+          <Input disabled={!isSelected} />
         </div>
         <div className="flex flex-col col-span-6">
-          <label className="text-2xl font-bold" htmlFor="">
+          <label className="text-2xl font-bold">
             CVC:
           </label>
-          <Input />
+          <Input disabled={!isSelected} />
         </div>
       </div>
     </div>

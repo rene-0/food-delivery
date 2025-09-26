@@ -10,10 +10,10 @@ export function PayOnDelivery({ isSelected, onSelect, deliveryMode }: PayOnDeliv
   const canPayOnDelivery = deliveryMode === "delivery"
   return (
     <div className="mb-3">
-      <RadioBox disabled={!canPayOnDelivery} onChange={onSelect} value="on_delivery" id="on_delivery" name="payment_type">
+      <RadioBox checked={isSelected} disabled={!canPayOnDelivery} onChange={onSelect} value="on_delivery" id="on_delivery" name="payment_type">
         Pagar na entrega
       </RadioBox>
-      <div className={`${isSelected && canPayOnDelivery ? "opacity-1" : "opacity-40 grayscale"} transition-all`}>
+      <div className={`${isSelected && canPayOnDelivery ? "" : "opacity-40 grayscale"} transition-all`}>
         <label className="font-bold text-xl" htmlFor="">
           Pagar com o entregador
         </label>

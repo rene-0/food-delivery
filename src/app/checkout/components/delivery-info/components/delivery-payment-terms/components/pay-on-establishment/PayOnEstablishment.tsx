@@ -10,10 +10,10 @@ export function PayOnEstablishment({ isSelected, onSelect, deliveryMode }: PayOn
   const canPayOnEstablishment = deliveryMode === "get"
   return (
     <div className="mb-3">
-      <RadioBox disabled={!canPayOnEstablishment} onChange={onSelect} value="on_establishment" id="on_establishment" name="payment_type">
+      <RadioBox checked={isSelected} disabled={!canPayOnEstablishment} onChange={onSelect} value="on_establishment" id="on_establishment" name="payment_type">
         Pagar no estabelecimento
       </RadioBox>
-      <div className={`${isSelected && canPayOnEstablishment ? "opacity-1" : "opacity-40 grayscale"} transition-all`}>
+      <div className={`${isSelected && canPayOnEstablishment ? "" : "opacity-40 grayscale"} transition-all`}>
         <label className="font-bold text-xl" htmlFor="">
           Pagar com a gente ao receber o pedido
         </label>
