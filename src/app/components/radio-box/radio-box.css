@@ -12,7 +12,7 @@
   display: none;
 }
 
-.radio-box input + div.marker::after {
+.radio-box input + label.marker::after {
   content: "";
   width: 15px;
   height: 15px;
@@ -22,7 +22,7 @@
   transition: background-color 0.3s ease-in-out;
 }
 
-.radio-box input:checked + div::after {
+.radio-box input:checked + label::after {
   background-color: currentColor;
 }
 
