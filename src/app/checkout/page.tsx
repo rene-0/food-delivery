@@ -1,6 +1,6 @@
 "use client"
 import { useState } from "react"
-import { CheckoutConfirmation } from "./components/checkout-confimation/CheckoutConfimation"
+import { CheckoutConfirmation } from "./components/checkout-confimation/CheckoutConfirmation"
 import { CheckoutSummary } from "./components/checkout-summary/CheckoutSummary"
 import { DeliveryInfo } from "./components/delivery-info/DeliveryInfo"
 import { StepsIndicator } from "./components/steps-indicator/StepsIndicator"
