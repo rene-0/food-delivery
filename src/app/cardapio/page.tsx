@@ -1,8 +1,10 @@
 "use client"
 import { AxiosHttpHelper } from "@/helpers/axios-http-helper"
-import { useEffect, useState } from "react"
+import { useRouter } from "next/navigation"
+import { useContext, useEffect, useState } from "react"
 import { toast } from "react-toastify"
 import { ProductCard } from "../components/product-card/ProductCard"
+import { OrderItemsContext } from "../context/OrderItemsProvider"
 import { FilterSection } from "./components/filter-section/FilterSection"
 
 type MenuProduct = {
@@ -13,8 +15,20 @@ type MenuProduct = {
   updatedAt: string
 }
 
+const IngredientsMock = [
+  { id: '1', name: 'Salada', selected: true },
+  { id: '2', name: 'Cebola', selected: true },
+  { id: '3', name: 'Tomate', selected: true },
+  { id: '4', name: 'Hamburger', selected: true },
+  { id: '5', name: 'Presunto', selected: true },
+  { id: '6', name: 'Queijo', selected: true },
+]
+
 export default function Menu() {
   const [products, setProducts] = useState<MenuProduct[]>([])
+  const router = useRouter()
+
+  const { setOrderItems } = useContext(OrderItemsContext)
 
   const loadMenu = async () => {
     try {
@@ -25,6 +39,22 @@ export default function Menu() {
       setProducts(menuProducts || [])
     } catch (error) {
       toast.error("Erro ao buscar produtos")
+    }
+  }
+
+  const addToCart = (productId: string) => {
+    const product = products.find(product => product.id === productId)
+    if (product) {
+      setOrderItems(oldOrderItems => ([...oldOrderItems, { id: product.id, name: product.name, price: product.price, ingredients: IngredientsMock }]))
+      toast.success(`${product.name} adicionado!`)
+    }
+  }
+
+  const buyProduct = (productId: string) => {
+    const product = products.find(product => product.id === productId)
+    if (product) {
+      setOrderItems(oldOrderItems => ([...oldOrderItems, { id: product.id, name: product.name, price: product.price, ingredients: IngredientsMock }]))
+      router.push('./checkout')
     }
   }
 
@@ -46,6 +76,8 @@ export default function Menu() {
             name={name}
             imageUrl="/burger.png"
             starsPercentageRating={68}
+            onAdd={() => addToCart(id)}
+            onBuy={() => buyProduct(id)}
           />
         ))}
       </div>

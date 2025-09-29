@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify"
 import { Footer } from "./components/footer/Footer"
 import Nav from "./components/nav/Nav"
 import AuthProvider from "./context/AuthProvide"
+import OrderItemsProvider from "./context/OrderItemsProvider"
 import "./globals.css"
 
 export const metadata: Metadata = {
@@ -23,10 +24,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className={`${font.className} bg-primary-200`}>
         <AuthProvider>
-          <Nav />
-          <main>{children}</main>
-          <Footer />
-          <ToastContainer />
+          <OrderItemsProvider>
+            <Nav />
+            <main>{children}</main>
+            <Footer />
+            <ToastContainer />
+          </OrderItemsProvider>
         </AuthProvider>
       </body>
     </html>

@@ -1,20 +1,19 @@
 "use client"
 import { Button } from "@/app/components/button/Button"
 import { AuthContext } from "@/app/context/AuthProvide"
-import ShoppingOutlined from "@ant-design/icons/lib/icons/ShoppingOutlined"
 import UserOutlined from "@ant-design/icons/lib/icons/UserOutlined"
 import Link from "next/link"
 import { useContext } from "react"
+import { CheckoutButton } from "./components/checkout-button/CheckoutButton"
 
 export function NavButtons() {
 	const { isAuthenticated } = useContext(AuthContext)
 
+
 	return (
 		<div className="flex items-center mt-auto mb-0">
 			<Link className=" mr-10" href="./checkout">
-				<Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950">
-					<ShoppingOutlined />
-				</Button>
+				<CheckoutButton />
 			</Link>
 			<div>
 				{isAuthenticated ? (

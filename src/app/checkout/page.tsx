@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import CheckoutProvider from "../context/CheckoutProvider"
 import { CheckoutConfirmation } from "./components/checkout-confimation/CheckoutConfirmation"
 import { CheckoutSummary } from "./components/checkout-summary/CheckoutSummary"
 import { DeliveryInfo } from "./components/delivery-info/DeliveryInfo"
@@ -23,13 +24,15 @@ export default function Checkout() {
   }
 
   return (
-    <div className="flex flex-col px-0 lg:px-10 2xl:px-20 pb-5 text-secondary-950/75 checkout max-h-[90vh]">
-      <StepsIndicator currentStep={currentStep} />
-      <div className="overflow-hidden flex flex-nowrap">
-        <CheckoutSummary incrementStep={incrementStep} active={currentStep === 1} />
-        <DeliveryInfo decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 2} />
-        <CheckoutConfirmation decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 3} />
+    <CheckoutProvider>
+      <div className="flex flex-col px-0 lg:px-10 2xl:px-20 pb-5 text-secondary-950/75 checkout max-h-[90vh]">
+        <StepsIndicator currentStep={currentStep} />
+        <div className="overflow-hidden flex flex-nowrap">
+          <CheckoutSummary incrementStep={incrementStep} active={currentStep === 1} />
+          <DeliveryInfo decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 2} />
+          <CheckoutConfirmation decrementStep={decrementStep} active={currentStep === 3} />
+        </div>
       </div>
-    </div>
+    </CheckoutProvider>
   )
 }

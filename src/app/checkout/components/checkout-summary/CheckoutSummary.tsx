@@ -9,8 +9,8 @@ export type CheckoutSummaryProps = {
 
 export function CheckoutSummary({ active, incrementStep }: CheckoutSummaryProps) {
   return (
-    <div className={`${active ? "w-full" : "w-0 h-0"} transition-all overflow-hidden p-1`}>
-      <div className="flex justify-between flex-nowrap h-full">
+    <div className={`${active ? "w-full" : "w-0 h-0"} transition-all overflow-hidden`}>
+      <div className="flex justify-between flex-nowrap h-full p-1">
         <PreviewImage />
         <SummaryItems incrementStep={incrementStep} />
       </div>

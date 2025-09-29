@@ -1,18 +1,32 @@
+"use client"
 import { Title } from "@/app/components/title/Title"
+import { CheckoutContext } from "@/app/context/CheckoutProvider"
+import { useContext } from "react"
 import { PayOnDelivery } from "./components/pay-on-delivery/PayOnDelivery"
 import { PayOnEstablishment } from "./components/pay-on-establishment/PayOnEstablishment"
 import { PayWithCreditCard } from "./components/pay-with-credit-card/PayWithCreditCard"
 import { PayWithPix } from "./components/pay-with-pix/PayWithPix"
 
-type PaymentMode = "credit_card" | "on_delivery" | "on_establishment" | "pix"
+export function DeliveryPaymentTerms() {
+  const { checkout, setCheckout } = useContext(CheckoutContext)
 
-type DeliveryPaymentTermsProps = {
-  deliveryMode: "delivery" | "get"
-  paymentMode: PaymentMode
-  onSelect: (paymentMode: PaymentMode) => any
-}
+  const onSelectPaymentMode = (paymentMode: CheckoutContext.Payment['type']) => {
+    switch (paymentMode) {
+      case 'credit_card':
+        setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: paymentMode, cardNumber: '', cvc: '', expirationDate: '', holder: '' } }))
+        break
+      case 'on_delivery':
+        setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: paymentMode } }))
+        break
+      case 'on_establishment':
+        setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: paymentMode } }))
+        break
+      case 'pix':
+        setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: paymentMode } }))
+        break
+    }
+  }
 
-export function DeliveryPaymentTerms({ deliveryMode, paymentMode, onSelect }: DeliveryPaymentTermsProps) {
   return (
     <div>
       <Title className="text-5xl" level={2}>
@@ -20,19 +34,19 @@ export function DeliveryPaymentTerms({ deliveryMode, paymentMode, onSelect }: De
       </Title>
       <div className="grid grid-cols-12">
         <div className="col-span-12 lg:col-span-6 lg:pr-2">
-          <PayWithCreditCard isSelected={paymentMode === "credit_card"} onSelect={() => onSelect("credit_card")} />
-          <PayWithPix isSelected={paymentMode === "pix"} onSelect={() => onSelect("pix")} />
+          <PayWithCreditCard onSelect={() => onSelectPaymentMode("credit_card")} />
+          <PayWithPix isSelected={checkout.payment.type === "pix"} onSelect={() => onSelectPaymentMode("pix")} />
         </div>
         <div className="col-span-12 lg:col-span-6 lg:pl-2 mb-5">
           <PayOnDelivery
-            deliveryMode={deliveryMode}
-            onSelect={() => onSelect("on_delivery")}
-            isSelected={paymentMode === "on_delivery"}
+            deliveryMode={checkout.delivery.type}
+            onSelect={() => onSelectPaymentMode("on_delivery")}
+            isSelected={checkout.payment.type === "on_delivery"}
           />
           <PayOnEstablishment
-            deliveryMode={deliveryMode}
-            onSelect={() => onSelect("on_establishment")}
-            isSelected={paymentMode === "on_establishment"}
+            deliveryMode={checkout.delivery.type}
+            onSelect={() => onSelectPaymentMode("on_establishment")}
+            isSelected={checkout.payment.type === "on_establishment"}
           />
         </div>
       </div>
