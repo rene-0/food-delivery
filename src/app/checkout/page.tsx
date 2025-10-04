@@ -1,13 +1,13 @@
 "use client"
 import { useState } from "react"
-import "./checkout.css"
-import { CheckoutConfirmation } from "./components/checkout-confimation/CheckoutConfimation"
+import CheckoutProvider from "../context/CheckoutProvider"
+import { CheckoutConfirmation } from "./components/checkout-confimation/CheckoutConfirmation"
 import { CheckoutSummary } from "./components/checkout-summary/CheckoutSummary"
-import { StepsIndicator } from "./components/checkout-summary/components/steps-indicator/StepsIndicator"
 import { DeliveryInfo } from "./components/delivery-info/DeliveryInfo"
+import { StepsIndicator } from "./components/steps-indicator/StepsIndicator"
 
 export default function Checkout() {
-  const [currentStep, setCurrentStep] = useState(3)
+  const [currentStep, setCurrentStep] = useState(1)
 
   const incrementStep = () => {
     if (currentStep >= 3) {
@@ -24,13 +24,15 @@ export default function Checkout() {
   }
 
   return (
-    <div className="px-0 lg:px-10 2xl:px-20 pb-5 text-secondary-950/75 checkout">
-      <StepsIndicator currentStep={currentStep} />
-      <div className="overflow-x-hidden flex flex-nowrap p-1">
-        <CheckoutSummary incrementStep={incrementStep} active={currentStep === 1} />
-        <DeliveryInfo decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 2} />
-        <CheckoutConfirmation decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 3} />
+    <CheckoutProvider>
+      <div className="flex flex-col px-0 lg:px-10 2xl:px-20 pb-5 text-secondary-950/75 checkout max-h-[90vh]">
+        <StepsIndicator currentStep={currentStep} />
+        <div className="overflow-hidden flex flex-nowrap">
+          <CheckoutSummary incrementStep={incrementStep} active={currentStep === 1} />
+          <DeliveryInfo decrementStep={decrementStep} incrementStep={incrementStep} active={currentStep === 2} />
+          <CheckoutConfirmation decrementStep={decrementStep} active={currentStep === 3} />
+        </div>
       </div>
-    </div>
+    </CheckoutProvider>
   )
 }

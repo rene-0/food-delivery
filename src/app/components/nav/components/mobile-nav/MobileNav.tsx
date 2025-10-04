@@ -1,10 +1,9 @@
 "use client"
-import { Button } from "@/app/components/button/Button"
 import MenuOutlined from "@ant-design/icons/lib/icons/MenuOutlined"
-import ShoppingOutlined from "@ant-design/icons/lib/icons/ShoppingOutlined"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
+import { NavButtons } from "../nav-buttons/NavButtons"
 
 export function MobileNav() {
   const [isNavActive, setIsNavActive] = useState(false)
@@ -60,18 +59,7 @@ export function MobileNav() {
               Contato
             </Link>
           </div>
-          <div className="flex items-center mt-auto mb-0">
-            <Link href="./checkout">
-              <Button className="text-white p-0 h-10 w-10 rounded-full bg-accent-950 mr-10">
-                <ShoppingOutlined />
-              </Button>
-            </Link>
-            <div>
-              <Link className="text-lg text-white font-semibold mr-0 py-2 px-8 rounded-full cursor-pointer bg-accent-950  drop-shadow-md" href="/login">
-                Entrar
-              </Link>
-            </div>
-          </div>
+          <NavButtons />
         </div>
       </div>
     </div>

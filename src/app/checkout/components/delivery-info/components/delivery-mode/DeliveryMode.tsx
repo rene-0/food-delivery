@@ -1,14 +1,34 @@
-import { Input } from "@/app/components/input/Input"
-import { RadioBox } from "@/app/components/radio-box/RadioBox"
+"use client"
 import { Title } from "@/app/components/title/Title"
+import { CheckoutContext } from "@/app/context/CheckoutProvider"
+import { useContext } from "react"
+import { DeliveryOnAddress } from "./components/DeliveryOnAddress"
+import { PickUpAtTheEstablishment } from "./components/PickUpAtTheEstablishment"
 
-type DeliveryModeProps = {
-  selectedMode: "delivery" | "get"
-  onSelect: (mode: "delivery" | "get") => void
-}
+export function DeliveryMode() {
+  const { checkout, setCheckout } = useContext(CheckoutContext)
 
-export function DeliveryMode({ selectedMode, onSelect }: DeliveryModeProps) {
-  const isDelivery = selectedMode === "delivery"
+  const onSelectDeliveryMode = (deliveryMode: CheckoutContext.Delivery['type']) => {
+    if (deliveryMode === 'get') {
+      setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: 'on_establishment' } }))
+    } else {
+      if (checkout.payment.type === 'on_establishment') {
+        setCheckout(oldCheckout => ({ ...oldCheckout, payment: { type: 'on_delivery' } }))
+      }
+    }
+
+    setCheckout(oldCheckout => ({
+      ...oldCheckout,
+      delivery: deliveryMode === 'get'
+        ? { type: deliveryMode }
+        : {
+          type: deliveryMode,
+          street: '',
+          number: '',
+          neighborhood: '',
+        }
+    }))
+  }
 
   return (
     <div className="mb-5">
@@ -16,40 +36,8 @@ export function DeliveryMode({ selectedMode, onSelect }: DeliveryModeProps) {
         Modo de entrega:
       </Title>
       <div className="grid grid-cols-12 pr-2">
-        <div className="col-span-12 lg:col-span-6 mb-2 lg:mb-0">
-          <RadioBox onChange={() => onSelect("delivery")} defaultChecked value="delivery" id="delivery" name="receiving_type">
-            Entregar no endereço
-          </RadioBox>
-          <div className={`grid grid-cols-12 ${isDelivery ? "opacity-1" : "opacity-40 grayscale"} transition-all`}>
-            <div className="flex flex-col col-span-12">
-              <label className="text-2xl font-bold" htmlFor="">
-                Rua:
-              </label>
-              <Input disabled={!isDelivery} />
-            </div>
-            <div className="flex flex-col col-span-6">
-              <label className="text-2xl font-bold" htmlFor="">
-                Bairro:
-              </label>
-              <Input disabled={!isDelivery} />
-            </div>
-            <div className="flex flex-col col-span-6">
-              <label className="text-2xl font-bold" htmlFor="">
-                Número:
-              </label>
-              <Input disabled={!isDelivery} />
-            </div>
-          </div>
-        </div>
-        <div className="col-span-12 lg:col-span-6 lg:pl-2">
-          <RadioBox id="get" onChange={() => onSelect("get")} value="get" name="receiving_type">
-            Retirar no estabelecimento
-          </RadioBox>
-          <div className={`${!isDelivery ? "opacity-1" : "opacity-40 grayscale"} transition-all`}>
-            <p className="font-bold text-xl">Esperamos você buscar seu pedido</p>
-            <p className="text-lg">Enviaremos uma mensagem para você quando estiver pronto!</p>
-          </div>
-        </div>
+        <DeliveryOnAddress onSelect={onSelectDeliveryMode} />
+        <PickUpAtTheEstablishment selectedMode={checkout.delivery.type} onSelect={onSelectDeliveryMode} />
       </div>
     </div>
   )

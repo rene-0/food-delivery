@@ -12,6 +12,9 @@ const myIcon = new Icon({
 })
 
 export function LocationMap() {
+  if (typeof window === "undefined") {
+    return <></>
+  }
   return (
     <MapContainer className="location-map" center={[-22.0737, -48.737]} zoom={15} scrollWheelZoom={true}>
       <TileLayer
